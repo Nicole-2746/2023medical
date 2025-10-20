@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from hello import views
 
 urlpatterns = [
-    path('', views.single_page_view, name='home'),  # 根路径指向单页面应用
+    path('', views.index, name='home'),  # 根路径指向首页
     path('admin/', admin.site.urls),
     path('hello/', include('hello.urls')),
 ]
+
+# 在开发环境中添加静态文件服务
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Single Page App</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Hello! 单页应用</h1>
+    <button data-section="1">Section 1</button>
+    <button data-section="2">Section 2</button>
+    <button data-section="3">Section 3</button>
+    <div id="content">
+        <!-- 内容将在这里动态加载 -->
+    </div>
+    
+    <script src="{% static 'hello/js/Single_Page.js' %}"></script>
+</body>
+</html>
