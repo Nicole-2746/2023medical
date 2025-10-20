@@ -21,5 +21,4 @@ urlpatterns = [
     path('', views.single_page_view, name='home'),  # 根路径指向单页面应用
     path('admin/', admin.site.urls),
     path('hello/', include('hello.urls')),
-    path('roll/', include('Roll.urls')),
 ]
